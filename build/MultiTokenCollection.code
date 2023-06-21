@@ -1004,7 +1004,7 @@ CTOS
 LDMSGADDR
 LDREF
 ENDS
-.loc ../contracts/MultiTokenCollection.sol, 188
+.loc ../contracts/MultiTokenCollection.sol, 189
 GETGLOB 9
 PUSH S5
 CALLREF {
@@ -1013,11 +1013,17 @@ CALLREF {
 SDEQ
 THROWIFNOT 100
 .loc ../contracts/MultiTokenCollection.sol, 190
+CALLREF {
+	CALL $_reserve_413ab4a8_internal_macro$
+}
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/MultiTokenCollection.sol, 192
 ROLL 6
 IFNOTREF {
 	CALL $_decreaseTotalSupply_2d01fdbd_internal_macro$
 }
-.loc ../contracts/MultiTokenCollection.sol, 194
+.loc ../contracts/MultiTokenCollection.sol, 196
 PUSH3 S3, S5, S4
 PUSHREFSLICE {
 	.blob xc0000000000000000000000001
@@ -1034,13 +1040,13 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/MultiTokenCollection.sol, 196
+.loc ../contracts/MultiTokenCollection.sol, 198
 OVER
 PARSEMSGADDR
 INDEX 3
 PLDU 256
 PUSHCONT {
-	.loc ../contracts/MultiTokenCollection.sol, 203
+	.loc ../contracts/MultiTokenCollection.sol, 205
 	PUSH2 S0, S2
 	GETGLOB 9
 	PUSH3 S6, S8, S7
@@ -1076,7 +1082,7 @@ PUSHCONT {
 	STBREFR
 }
 PUSHCONT {
-	.loc ../contracts/MultiTokenCollection.sol, 197
+	.loc ../contracts/MultiTokenCollection.sol, 199
 	PUSH S2
 	NEWC
 	STSLICECONST x42_
@@ -1098,7 +1104,7 @@ BLKDROP 6
 CALL $_beforeMint_34fd15c7_internal_macro$
 
 .macro _beforeMint_34fd15c7_internal_macro
-.loc ../contracts/MultiTokenCollection.sol, 220
+.loc ../contracts/MultiTokenCollection.sol, 222
 PUSHINT 2311
 SWAP
 PARSEMSGADDR
@@ -1106,20 +1112,20 @@ INDEX 3
 PLDU 256
 NEQINT 0
 THROWANYIFNOT
-.loc ../contracts/MultiTokenCollection.sol, 222
+.loc ../contracts/MultiTokenCollection.sol, 224
 CALLREF {
 	CALL $_reserve_413ab4a8_internal_macro$
 }
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/MultiTokenCollection.sol, 224
-GETGLOB 24
 .loc ../contracts/MultiTokenCollection.sol, 226
+GETGLOB 24
+.loc ../contracts/MultiTokenCollection.sol, 228
 GETGLOB 13
 INC
 UFITS 128
 SETGLOB 13
-.loc ../contracts/MultiTokenCollection.sol, 227
+.loc ../contracts/MultiTokenCollection.sol, 229
 GETGLOB 24
 INC
 UFITS 128
@@ -1131,7 +1137,7 @@ SETGLOB 24
 CALL $_buildNftState_c971fdf8_internal_macro$
 
 .macro _buildNftState_c971fdf8_internal_macro
-.loc ../contracts/MultiTokenCollection.sol, 236
+.loc ../contracts/MultiTokenCollection.sol, 238
 PUSHINT 0
 NEWC
 STU 256
@@ -1163,7 +1169,7 @@ ENDC
 CALL $_buildTokenState_970d5c5e_internal_macro$
 
 .macro _buildTokenState_970d5c5e_internal_macro
-.loc ../contracts/MultiTokenCollection.sol, 247
+.loc ../contracts/MultiTokenCollection.sol, 249
 PUSHINT 0
 NEWC
 STU 256
@@ -1205,7 +1211,7 @@ ENDC
 CALL $_decreaseTotalSupply_2d01fdbd_internal_macro$
 
 .macro _decreaseTotalSupply_2d01fdbd_internal_macro
-.loc ../contracts/MultiTokenCollection.sol, 260
+.loc ../contracts/MultiTokenCollection.sol, 262
 GETGLOB 13
 DEC
 UFITS 128
@@ -1217,7 +1223,7 @@ SETGLOB 13
 CALL $_targetBalance_81a00f03_internal_macro$
 
 .macro _targetBalance_81a00f03_internal_macro
-.loc ../contracts/MultiTokenCollection.sol, 264
+.loc ../contracts/MultiTokenCollection.sol, 266
 PUSHINT 500000000
 .loc ../contracts/MultiTokenCollection.sol, 0
 
@@ -1248,7 +1254,7 @@ DEPTH
 ADDCONST -2
 PICK
 THROWIFNOT 101
-.loc ../contracts/MultiTokenCollection.sol, 268
+.loc ../contracts/MultiTokenCollection.sol, 270
 TRUE
 .loc ../contracts/MultiTokenCollection.sol, 0
 

@@ -185,7 +185,9 @@ function onAcceptMultiTokensBurn(
         address remainingGasTo,
         address callbackTo,
         TvmCell payload) = abi.decode(params, (uint128, uint256, address, address, address, TvmCell));
+        
         require(msg.sender == _resolveNft(id));
+        tvm.rawReserve(_reserve(), 0);
 
         if (tokenSupply == 0) {
             _decreaseTotalSupply();
