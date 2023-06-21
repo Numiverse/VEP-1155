@@ -22,7 +22,8 @@ abstract contract TIP4_3NFT is ITIP4_3NFT, TIP6 {
         uint128 indexDestroyValue,
         TvmCell codeIndex,
         address collection,
-        address owner
+        address owner,
+        bool deployIndex
     ) internal {
         _indexDeployValue = indexDeployValue;
         _indexDestroyValue = indexDestroyValue;
@@ -34,7 +35,9 @@ abstract contract TIP4_3NFT is ITIP4_3NFT, TIP6 {
             bytes4(tvm.functionId(ITIP4_3NFT.resolveIndex)) 
         ] = true;
 
-        _deployIndex(owner, collection);
+        if (deployIndex) {
+            _deployIndex(owner, collection);
+        }
     }
 
     function _deployIndex(address owner, address collection) internal virtual view {

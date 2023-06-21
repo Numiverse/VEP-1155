@@ -69,7 +69,7 @@ contract MultiTokenWallet is
         _initWalletBase(owner, collection, nft, id, balance, remainOnNft, notify, payload, remainingGasTo);
         _initWalletDestroyable();
         _initRoyalty(royaltyAddress, royalty);
-        _initIndexes(indexDeployValue, indexDestroyValue, codeIndex, collection, owner);
+        _initIndexes(indexDeployValue, indexDestroyValue, codeIndex, collection, owner, balance > 0);
     }
 
     function _deployToken(
